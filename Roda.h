@@ -1,16 +1,20 @@
 #ifndef RODA_H
 #define RODA_H
 
+#include <Arduino.h>
+
 class Roda {
+    int pin1, pin2;
     int velocidade;
-    int constante;
+    float constante;
+    void acao();
   public:
     Roda();
-    Roda(int velocidade, int constante);
+    Roda(int pin1, int pin2, float constante);
     int get_velocidade();
-    int get_constante();
+    float get_constante();
     void set_velocidade(int velocidade);
-    void set_constante(int constante);
+    void set_constante(float constante);
 };
 
 #endif

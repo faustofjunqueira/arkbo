@@ -1,15 +1,20 @@
-#include "Roda.h"
+#include <Ultrasonic.h>
+#include <Servo.h>
+#include "Motor.h"
 
-Roda roda(10,20);
+// Pinagem:
+//       2 - Trig Ultrasom
+//       3 - Echo Ultrasom
+//       9 - Sinal Servo Motor
+//     5,6 - Sinal Roda Direita
+//   10,11 - Sinal Roda Esquerda
+
+Motor motor(new Roda(10,11,.85), new Roda(5,6,1.0));
 
 void setup() {
-  // put your setup code here, to run once:
-  Serial.begin(9600);
 }
 
 void loop() {
-  Serial.print(roda.get_velocidade());
-  Serial.print(" ");
-  Serial.println(roda.get_constante());
+  motor.anda(FRENTE);
 }
 

@@ -1,15 +1,15 @@
-##ifndef ENUM_CONSTANTS
+#ifndef ENUM_CONSTANTS
 #define ENUM_CONSTANTS
 
 enum Direcao { 
   ESQUERDA,
-  FRENTE,
   DIREITA
 };
 
-enum Sentido {
+enum Marcha {
   FRENTE,
-  ATRAS
+  RE,
+  PONTO_MORTO
 };
 
 #endif
