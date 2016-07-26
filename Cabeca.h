@@ -30,6 +30,7 @@ public:
   Cabeca();
   Cabeca(int servoPin, int triggerPin, int echoPin);
   long getDistancia(Direcao direcao);
+  long getDistancia();
   void setAnguloRest(int angulo);
   void setAngulo(int angulo);
 };

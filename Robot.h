@@ -7,9 +7,11 @@
 class Robot{
   Cabeca *cabeca;
   Motor *motor;
+  long distanciaLimite;
+  void alteraCaminho();
 public:
   Robot();
-  Robot(Cabeca *cabeca, Motor *motor);
+  Robot(Cabeca *cabeca, Motor *motor, long distanciaLimite);
   void loop();
 };
 

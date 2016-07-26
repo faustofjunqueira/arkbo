@@ -22,6 +22,14 @@ long Cabeca::getDistancia(Direcao direcao){
   return distancia;
 }
 
+long Cabeca::getDistancia(){
+  setAngulo(anguloRest);
+  delay(200);
+  long distancia = ultrasom->timing();
+  delay(300);
+  return distancia;
+}
+
 void Cabeca::setAnguloRest(int angulo){
   anguloRest = angulo;
 }
