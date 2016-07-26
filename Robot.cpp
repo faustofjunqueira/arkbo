@@ -3,6 +3,11 @@
 Robot::Robot(){}
 Robot::Robot(Cabeca *cabeca, Motor *motor, long distanciaLimite): cabeca(cabeca), motor(motor), distanciaLimite(distanciaLimite){}
 
+void Robot::setup(){
+  cabeca->setAngulo(90);
+  motor->anda(FRENTE);
+}
+
 void Robot::alteraCaminho(){
   long distanciaDireita = cabeca->getDistancia(DIREITA);
   long distanciaEsquerda = cabeca->getDistancia(ESQUERDA);

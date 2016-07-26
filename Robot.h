@@ -12,6 +12,7 @@ class Robot{
 public:
   Robot();
   Robot(Cabeca *cabeca, Motor *motor, long distanciaLimite);
+  void setup();
   void loop();
 };
 

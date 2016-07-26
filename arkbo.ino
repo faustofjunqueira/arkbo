@@ -13,24 +13,19 @@ char pinRodaEsquerda2 = 3;
 float constanteRodaEsquerda = 0.85;
 float constanteRodaDireita = 1.0;
 
-// Pinagem:
-//       1 - Trig Ultrasom
-//       0 - Echo Ultrasom
-//       9 - Sinal Servo Motor
-//     5,6 - Sinal Roda Direita
-//   3,11 - Sinal Roda Esquerda
+long distanciaLimite = 1000;
 
-Motor *motor;
-Cabeca *cabeca;
-Servo servo;
 void setup() {
-  cabeca = new Cabeca(servoPin,trigPin,echoPin);
-  motor = new Motor(new Roda(pinRodaDireita1,pinRodaDireita2,constanteRodaDireita), new Roda(pinRodaEsquerda1,pinRodaEsquerda2,constanteRodaEsquerda));
-  cabeca->setAngulo(120);  
-  motor->anda(RE);
+
+  arkbo = new Robot(new Cabeca(servoPin,trigPin,echoPin), 
+                    new Motor(new Roda(pinRodaDireita1,pinRodaDireita2,constanteRodaDireita), new Roda(pinRodaEsquerda1,pinRodaEsquerda2,constanteRodaEsquerda)), 
+                    distanciaLimite);  
+
+  arkbo->setup();
+
 }
 
 void loop() {
-
+  arkbo->loop();
 }
 
