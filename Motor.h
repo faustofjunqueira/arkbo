@@ -23,6 +23,7 @@ public:
   void vira(Direcao direcao);
   void anda(Marcha marcha);
   void set_velocidade(int velocidade, int tempoDeCurva);
+  Roda *get_roda(Direcao direcao);
 };
 
 

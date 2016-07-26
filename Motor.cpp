@@ -33,3 +33,11 @@ void Motor::set_velocidade(int velocidade, int tempoDeCurva){
   this->velocidade = velocidade;
   this->tempoDeCurva = tempoDeCurva;
 }
+
+Roda *Motor::get_roda(Direcao direcao){
+  if(direcao == DIREITA){
+    return rdir;
+  }else{
+    return resq;
+  }
+}
