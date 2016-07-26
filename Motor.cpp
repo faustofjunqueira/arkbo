@@ -2,17 +2,19 @@
 
 Motor::Motor(){}
 
-Motor::Motor(Roda *resq, Roda *rdir): resq(resq), rdir(rdir), velocidade(VELOCIDADE_INICIAL_DEFAULT){}
+Motor::Motor(Roda *resq, Roda *rdir): resq(resq), rdir(rdir), velocidade(VELOCIDADE_INICIAL_DEFAULT), velocidadeDeCurva(VELOCIDADE_CURVA_INICIAL_DEFAULT){}
 
 void Motor::vira(Direcao direcao){
   anda(PONTO_MORTO);
+  delay(200);
   if(direcao == DIREITA) {
-    resq->set_velocidade(0);
-    rdir->set_velocidade(0);
+    resq->set_velocidade(velocidadeDeCurva);
+    rdir->set_velocidade(velocidadeDeCurva * -1);
   }else if(direcao == ESQUERDA) {
-    resq->set_velocidade(0);
-    rdir->set_velocidade(0);
+    resq->set_velocidade(velocidadeDeCurva * -1);
+    rdir->set_velocidade(velocidadeDeCurva);
   }
+  delay(580);
   anda(PONTO_MORTO);
 }
 
@@ -29,9 +31,9 @@ void Motor::anda(Marcha marcha){
   }
 }
 
-void Motor::set_velocidade(int velocidade, int tempoDeCurva){
+void Motor::set_velocidade(int velocidade, int velocidadeDeCurva){
   this->velocidade = velocidade;
-  this->tempoDeCurva = tempoDeCurva;
+  this->velocidadeDeCurva = velocidadeDeCurva;
 }
 
 Roda *Motor::get_roda(Direcao direcao){

@@ -8,15 +8,15 @@
 #define VELOCIDADE_INICIAL_DEFAULT 100
 #endif
 
-#ifndef TEMPO_CURVA_INICIA_DEFAULT
-#define TEMPO_CURVA_INICIA_DEFAULT 300
+#ifndef VELOCIDADE_CURVA_INICIAL_DEFAULT
+#define VELOCIDADE_CURVA_INICIAL_DEFAULT 90
 #endif
 
 class Motor {
   Roda *resq;
   Roda *rdir;
   int velocidade;
-  int tempoDeCurva;
+  int velocidadeDeCurva;
 public:
   Motor();
   Motor(Roda *resq, Roda *rdir);

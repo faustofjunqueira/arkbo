@@ -1,5 +1,6 @@
 #include <Ultrasonic.h>
 #include <Servo.h>
+#include "Robot.h"
 #include "Motor.h"
 #include "Cabeca.h"
 
@@ -13,7 +14,9 @@ char pinRodaEsquerda2 = 3;
 float constanteRodaEsquerda = 0.85;
 float constanteRodaDireita = 1.0;
 
-long distanciaLimite = 1000;
+long distanciaLimite = 2000;
+
+Robot *arkbo;
 
 void setup() {
 
