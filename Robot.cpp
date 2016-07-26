@@ -23,6 +23,6 @@ void Robot::alteraCaminho(){
 void Robot::loop(){
   long distancia = cabeca->getDistancia();
   if(distancia <= distanciaLimite){
-    
+    alteraCaminho();
   }
 }
